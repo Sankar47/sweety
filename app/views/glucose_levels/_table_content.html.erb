@@ -1,0 +1,36 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Created At</th>
+      <th scope="col">Level (mg/dl)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if glucose_levels.present? %>
+
+      <% glucose_levels.each_with_index do |glucose_value, index|%>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= glucose_value.created_at.strftime("%d %B, %Y") %></td>
+          <td><strong><%= glucose_value.level %></strong></td>
+        </tr>
+      <% end %>
+
+    <% else %>
+
+      <tr>
+        <td colspan="3"><strong>No Records Found</strong></td>
+      </tr>
+    
+    <% end %>
+
+  </tbody>
+  </tfoot>
+    <% levels = glucose_levels.pluck(:level)%>
+    <th class="text-success">Minimum: <%= levels.min %></th>
+    <th class="text-danger">Maximum: <%= levels.max %></th>
+    <th class="text-warning">Average: <%= levels.instance_eval { reduce(:+) / size.to_f } %></th>
+  </tfoot>
+</table>

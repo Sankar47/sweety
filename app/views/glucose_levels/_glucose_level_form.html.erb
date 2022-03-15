@@ -1,0 +1,21 @@
+<%= form_for @glucose_level do |form| %>
+
+  <div class="row align-items-center justify-content-center mt-3">
+    <div class="col-sm-2 col-4 text-end">
+      <%= form.label "Glucose Level", class: "col-form-label" %>
+    </div>
+    <div class="col-sm-2 col-4">
+      <%= form.number_field :level, step: 1, required: true, class: "form-control" %>
+    </div>
+    <div class="col-sm-2 col-4 text-start">
+      <span class="text-dark">mg/dl</span>
+    </div>
+  </div>
+
+  <div class="row align-items-center justify-content-center mt-3">
+    <div class="col-sm-2 col-4">
+      <%= form.submit  'Submit', class: "btn btn-success w-100" %>
+    </div>
+  </div>
+
+<% end %>

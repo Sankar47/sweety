@@ -1,0 +1,17 @@
+<div class="p-5 rounded text-center">
+
+  <h2 class="mb-5">Welcome to Sweety App, <%= get_name_from_email(current_user) %></h2>
+
+  <div class="row align-items-center justify-content-center mt-3">
+    <div class="col-sm-6 col-12">
+      <span class="text-muted">Please Enter the sugar level in the below input. You can enter 
+      maximum of 4 times/day which will be good enough for tracking 
+      the sugar levels.</span>
+    </div>
+  </div>
+
+  <hr class="w-50 mx-auto"/>
+
+  <%= render "glucose_level_form" %>
+
+</div>

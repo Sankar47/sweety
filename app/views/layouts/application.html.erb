@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sweety</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+    <%= render 'shared/navbar' %>
+
+    <% if notice %>
+
+      <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+        <p class="notice"><%= notice %></p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+    <% end %>
+
+    <% if alert %>
+
+      <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+        <p class="notice mb-0"><%= alert %></p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

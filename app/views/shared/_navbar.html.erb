@@ -1,0 +1,16 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid d-flex justify-content-between">
+    <a class="navbar-brand" href="/">Sweety App</a>
+
+    <% if user_signed_in? %>
+      <div class="d-flex">
+        <%= link_to 'Reports', glucose_levels_path, class: 'btn btn-dark' %>
+        <%= link_to 'Enter Glucose Level', new_glucose_level_path, class: 'btn btn-dark' %>
+        <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-dark' %>
+      </div>
+    
+    <% end %>
+
+  </div>
+</nav>

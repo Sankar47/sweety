@@ -1,0 +1,25 @@
+<div class="p-5 rounded text-center">
+  <h2 class="mb-5">Glucose Level Report</h2>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8 shadow">
+      <h5 class="mb-4 mt-2 text-start text-info">Daily Report (<%= todays_date %>)</h5>
+      <%= render "table_content", glucose_levels: @daily_glucose_levels %>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8 shadow">
+      <h5 class="mb-4 mt-2 text-start text-info">Montly Report (<%= current_month %>)</h5>
+      <%= render "table_content", glucose_levels: @monthly_glucose_levels %>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8 shadow">
+      <h5 class="mb-4 mt-2 text-start text-info">Month to Date Report (<%= month_to_date_range %>)</h5>
+      <%= render "table_content", glucose_levels: @month_to_date_glucose_levels %>
+    </div>
+  </div>
+
+</div>
