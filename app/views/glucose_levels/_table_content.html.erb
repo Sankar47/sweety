@@ -27,10 +27,12 @@
     <% end %>
 
   </tbody>
-  </tfoot>
-    <% levels = glucose_levels.pluck(:level)%>
-    <th class="text-success">Minimum: <%= levels.min %></th>
-    <th class="text-danger">Maximum: <%= levels.max %></th>
-    <th class="text-warning">Average: <%= levels.instance_eval { reduce(:+) / size.to_f } %></th>
-  </tfoot>
+  <% if glucose_levels.present? %>
+    </tfoot>
+      <% levels = glucose_levels.pluck(:level)%>
+      <th class="text-success">Minimum: <%= levels.min %></th>
+      <th class="text-danger">Maximum: <%= levels.max %></th>
+      <th class="text-warning">Average: <%= levels.instance_eval { reduce(:+) / size.to_f } %></th>
+    </tfoot>
+  <% end %>
 </table>
