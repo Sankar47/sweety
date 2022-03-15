@@ -5,15 +5,17 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - ruby 3.0.0
 
-* System dependencies
+* Rails version - Rails 7.0.2.3 
 
-* Configuration
+* System dependencies - yarn, node, postgres
 
-* Database creation
+* Database creation - rake db:create
 
-* Database initialization
+* Database initialization - rake db:migrate
+
+* Configuration - yarn install and then run rails s
 
 * How to run the test suite
 
