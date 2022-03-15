@@ -11,7 +11,7 @@ Things you may want to cover:
 
 * System dependencies - yarn, node, postgres
 
-* Database creation - rake db:create
+* Database creation - rake db:create (need to add username and password in database.yml)
 
 * Database initialization - rake db:migrate
 
