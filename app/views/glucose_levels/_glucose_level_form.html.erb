@@ -13,9 +13,16 @@
   </div>
 
   <div class="row align-items-center justify-content-center mt-3">
+    <div class="col-sm-3 col-4">
+      <p class="text-danger mb-0"><%= @glucose_level.errors.full_messages.join(", ") %></p>
+    </div>
+  </div>
+
+  <div class="row align-items-center justify-content-center mt-3">
     <div class="col-sm-2 col-4">
       <%= form.submit  'Submit', class: "btn btn-success w-100" %>
     </div>
   </div>
+
 
 <% end %>

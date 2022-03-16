@@ -32,7 +32,7 @@ class GlucoseLevel < ApplicationRecord
   private
 
     def more_than_four_times_a_day
-      if GlucoseLevel.today.count >= DAILY_LIMIT
+      if self.user.glucose_levels.today.size >= DAILY_LIMIT
         errors.add(:level, "can only enter 4 times a day!")
       end
     end
